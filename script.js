@@ -40,13 +40,13 @@ var animate  = function() {
     }
     for ( var x=0; x<circles.length; x++ ) {
         circle = circles[x];
+        ctx.strokeStyle = "rgba(50,146,118," + circle.opacity + ")";
         ctx.beginPath();
         ctx.moveTo(old.x,old.y);
         ctx.lineTo(circle.x,circle.y);
         ctx.stroke();
         ctx.beginPath();
         ctx.lineWidth = .8;
-        ctx.strokeStyle = "rgba(50,146,118," + circle.opacity + ")";
         ctx.arc( circle.x, circle.y, circle.r, 0, Math.PI *2, true );
         ctx.stroke();
         ctx.closePath();
