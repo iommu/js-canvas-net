@@ -12,7 +12,7 @@ canvas.width = document.body.clientWidth;
 document.body.appendChild(canvas);
 //Variables
 var circles = [];
-var num = 20;
+var num = 100;
 //Functions
 var initialize = function() {
     circles = [];
@@ -25,7 +25,7 @@ var initialize = function() {
             x: sx,
             y: sy,
             r: (Math.random() * 3 + 6 ),
-            opacity: .2,
+            opacity: 1,
             direction: Math.random() > .5? 1:-1
         };
         circles.push( circle );
@@ -50,6 +50,8 @@ var animate  = function() {
         ctx.arc( circle.x, circle.y, circle.r, 0, Math.PI *2, true );
         ctx.stroke();
         ctx.closePath();
+        old.x = circle.x;
+        old.y = circle.y;
     }
     // requestAnimationFrame( animate );
 };
